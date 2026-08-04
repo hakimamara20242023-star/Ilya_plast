@@ -6,9 +6,10 @@ import type { Product } from "@/lib/types";
 interface ProductCardProps {
   product: Product;
   hasWeightVariants: boolean;
+  priority?: boolean;
 }
 
-export default function ProductCard({ product, hasWeightVariants }: ProductCardProps) {
+export default function ProductCard({ product, hasWeightVariants, priority = false }: ProductCardProps) {
   const href = `/p/${product.sku}`;
 
   return (
@@ -26,6 +27,7 @@ export default function ProductCard({ product, hasWeightVariants }: ProductCardP
           product={product}
           sizes="(min-width: 900px) 200px, 45vw"
           placeholderClassName="h-[110px] w-[80px]"
+          priority={priority}
         />
       </Link>
       <Link href={href} className="px-3 pb-0.5 pt-2.5">

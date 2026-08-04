@@ -8,7 +8,7 @@ import PixelRouteTracker from "@/components/PixelRouteTracker";
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic", "latin"],
-  weight: ["400", "600", "700", "800"],
+  weight: ["400", "700", "800"],
 });
 
 export const metadata: Metadata = {

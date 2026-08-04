@@ -160,11 +160,12 @@ export default function CategoryFilters({
 
       {filteredProducts.length > 0 ? (
         <div className="grid grid-cols-2 gap-3 p-4 md:grid-cols-4">
-          {filteredProducts.map((p) => (
+          {filteredProducts.map((p, index) => (
             <ProductCard
               key={p.id}
               product={p}
               hasWeightVariants={(variantGroupCounts.get(p.variant_group ?? "") ?? 0) > 1}
+              priority={index < 4}
             />
           ))}
         </div>
