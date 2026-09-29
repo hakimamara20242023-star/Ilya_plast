@@ -16,7 +16,13 @@ export default function CategoryCard({ category, count }: CategoryCardProps) {
         {category.icon}
       </div>
       <div className="text-[15px] font-extrabold text-text">{category.name_ar}</div>
-      <div className="text-[12px] text-muted">{count} موديل</div>
+      {count > 0 ? (
+        <div className="text-[12px] text-muted">{count} موديل</div>
+      ) : (
+        <div className="rounded-full bg-border/60 px-2.5 py-0.5 text-[12px] font-bold text-muted">
+          قريباً
+        </div>
+      )}
     </Link>
   );
 }
