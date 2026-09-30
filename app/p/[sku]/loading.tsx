@@ -11,12 +11,12 @@ export default function ProductLoading() {
 
       <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:px-4 lg:pt-6">
         <div>
-          <div className="mx-4 mt-4 aspect-square rounded-xl border border-border bg-surface lg:mt-0" />
+          <div className="mx-4 mt-4 aspect-[3/4] rounded-xl border border-border bg-surface lg:mt-0" />
           <div className="mt-2 flex gap-2.5 px-4 pb-5">
             {[0, 1, 2].map((i) => (
               <div
                 key={i}
-                className="aspect-square flex-1 rounded-lg border border-border bg-surface"
+                className="aspect-[3/4] flex-1 rounded-lg border border-border bg-surface"
               />
             ))}
           </div>

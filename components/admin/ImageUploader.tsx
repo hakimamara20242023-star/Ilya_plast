@@ -185,7 +185,7 @@ export default function ImageUploader({ sku, images, onChange }: ImageUploaderPr
               onDragStart={handleDragStart(index)}
               onDragOver={(e) => e.preventDefault()}
               onDrop={handleDropOnThumb(index)}
-              className="relative aspect-square overflow-hidden rounded-lg border border-border bg-bg"
+              className="relative aspect-[3/4] overflow-hidden rounded-lg border border-border bg-bg"
             >
               <Image
                 src={imageUrl(toThumbPath(path))}

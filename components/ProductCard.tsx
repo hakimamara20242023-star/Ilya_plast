@@ -16,7 +16,7 @@ export default function ProductCard({ product, hasWeightVariants, priority = fal
     <div className="flex flex-col overflow-hidden rounded-xl border border-border bg-bg">
       <Link
         href={href}
-        className="relative flex aspect-square items-center justify-center border-b border-border bg-bg"
+        className="relative flex aspect-[3/4] items-center justify-center border-b border-border bg-bg"
       >
         {hasWeightVariants && (
           <span className="absolute right-2 top-2 rounded-md bg-brand/10 px-[7px] py-[3px] text-[10px] font-bold text-brand">

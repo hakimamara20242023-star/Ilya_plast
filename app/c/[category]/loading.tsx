@@ -21,7 +21,7 @@ export default function CategoryLoading() {
             key={i}
             className="flex flex-col overflow-hidden rounded-xl border border-border bg-bg"
           >
-            <div className="aspect-square border-b border-border bg-surface" />
+            <div className="aspect-[3/4] border-b border-border bg-surface" />
             <div className="px-3 pb-0.5 pt-2.5">
               <div className="h-5 w-12 rounded bg-surface" />
               <div className="mt-2 h-3 w-24 rounded bg-surface" />

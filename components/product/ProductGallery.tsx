@@ -74,13 +74,12 @@ export default function ProductGallery({ product }: ProductGalleryProps) {
         onClick={() => setLightboxOpen(true)}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        className="relative mx-4 flex aspect-square cursor-zoom-in items-center justify-center overflow-hidden rounded-xl border border-border bg-bg"
+        className="relative mx-4 flex aspect-[3/4] cursor-zoom-in items-center justify-center overflow-hidden rounded-xl border border-border bg-bg"
       >
         <ProductImage
           product={product}
           imageIndex={activeIndex}
           sizes="(min-width: 1024px) 500px, 90vw"
-          className="h-[60%] w-[60%]"
           placeholderClassName="h-[60%] w-[60%]"
           priority={activeIndex === 0}
         />
@@ -100,7 +99,7 @@ export default function ProductGallery({ product }: ProductGalleryProps) {
         </div>
       )}
 
-      {slotCount > 0 && (
+      {hasMultiple && (
         <div className="mt-2 flex gap-2.5 px-4 pb-5">
           {Array.from({ length: slotCount }).map((_, i) => (
             <button
@@ -110,7 +109,7 @@ export default function ProductGallery({ product }: ProductGalleryProps) {
               className="flex flex-1 flex-col items-center gap-1"
             >
               <div
-                className={`relative flex aspect-square w-full items-center justify-center rounded-lg border bg-bg ${
+                className={`relative flex aspect-[3/4] w-full items-center justify-center rounded-lg border bg-bg ${
                   i === activeIndex ? "border-2 border-brand" : "border-border"
                 }`}
               >
