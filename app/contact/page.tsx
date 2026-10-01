@@ -3,13 +3,11 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ContactPhoneLink from "@/components/ContactPhoneLink";
+import { company } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "اتصل بنا — ILYA PLAST",
 };
-
-const PHONE_DISPLAY = "+213 555 01 02 03";
-const PHONE_TEL = "+213555010203";
 
 export default function ContactPage() {
   return (
@@ -31,10 +29,10 @@ export default function ContactPage() {
         </WhatsAppButton>
 
         <div className="mt-6 flex flex-col gap-3 rounded-xl border border-border bg-surface p-4">
-          <ContactPhoneLink phone={PHONE_TEL} className="text-[15px] font-bold text-text">
-            📞 {PHONE_DISPLAY}
+          <ContactPhoneLink phone={company.phoneTel} className="text-[15px] font-bold text-text">
+            📞 <span dir="ltr">{company.phoneDisplay}</span>
           </ContactPhoneLink>
-          <div className="text-[15px] text-muted">📍 المنطقة الصناعية، سطيف، الجزائر</div>
+          <div className="text-[15px] text-muted">📍 {company.address}</div>
         </div>
       </div>
 

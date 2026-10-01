@@ -11,10 +11,29 @@ const cairo = Cairo({
   weight: ["400", "700", "800"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ilya-plast.vercel.app";
+
+const TITLE = "ILYA PLAST — مصنع قوارير بلاستيك PET و HDPE، سطيف";
+const DESCRIPTION =
+  "ILYA PLAST مصنع جزائري للقوارير البلاستيكية PET و HDPE في سطيف. تصفح الكتالوج واطلب عرض سعر عبر واتساب.";
+
 export const metadata: Metadata = {
-  title: "ILYA PLAST — مصنع قوارير بلاستيك، سطيف",
-  description:
-    "ILYA PLAST — مصنع قوارير PET و HDPE في سطيف، الجزائر. أكثر من 50 موديل من 60ml إلى 5L. للشراء بالجملة تواصل معنا عبر واتساب.",
+  // metadataBase makes every relative OG/canonical URL in the app absolute.
+  metadataBase: new URL(SITE_URL),
+  title: { default: TITLE, template: "%s | ILYA PLAST" },
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "ILYA PLAST",
+    locale: "ar_DZ",
+    url: "/",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: "/logo.webp", width: 480, height: 314, alt: "ILYA PLAST" }],
+  },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
